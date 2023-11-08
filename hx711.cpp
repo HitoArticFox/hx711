@@ -1,12 +1,12 @@
-#include "Q2HX711.h"
+#include "hx711.h"
 
-Q2HX711::Q2HX711(PinName outputPin, PinName clockPin) : CLOCK_PIN(clockPin), OUT_PIN(outputPin)
+void hx711::hx711(PinName outputPin, PinName clockPin) : CLOCK_PIN(clockPin), OUT_PIN(outputPin)
 {
     pinsConfigured = false;
     GAIN = 1;
 }
 
-Q2HX711::~Q2HX711()
+void Q2HX711::~Q2HX711()
 {
 }
 

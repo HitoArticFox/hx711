@@ -1,9 +1,9 @@
-#ifndef Q2HX711_h
-#define Q2HX711_h
+#ifndef hx711_h
+#define hx711_h
 
 #include "mbed.h"
 
-class Q2HX711
+class hx711
 {
   private:
     DigitalOut CLOCK_PIN;
@@ -12,8 +12,8 @@ class Q2HX711
     bool pinsConfigured;
 
   public:
-    Q2HX711(PinName outputPin, PinName clockPin);
-    virtual ~Q2HX711();
+    hx711(PinName outputPin, PinName clockPin);
+    virtual ~hx711();
     bool readyToSend();
     void setGain(uint8_t gain = 128);
     long read();
