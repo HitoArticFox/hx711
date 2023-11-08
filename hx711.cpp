@@ -23,7 +23,7 @@ bool Q2HX711::readyToSend()
     return OUT_PIN == 0; // Considera LOW como condición de listo para enviar
 }
 
-void Q2HX711::setGain(byte gain)
+void Q2HX711::setGain(uint8_t gain)
 {
     switch (gain)
     {
@@ -49,7 +49,7 @@ long Q2HX711::read()
         // Espera hasta que esté listo para enviar
     }
 
-    byte data[3] = {0};
+    uint32_t data[3] = {0};
 
     for (int j = 2; j >= 0; j--)
     {
