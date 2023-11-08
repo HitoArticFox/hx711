@@ -1,5 +1,8 @@
 #include "hx711.h"
 
+DigitalOut CLOCK_PIN(PA_5); // Reemplaza PA_5 con el pin que estás usando para CLOCK
+DigitalIn OUT_PIN(PA_6);
+
 void hx711::hx711(PinName outputPin, PinName clockPin) : CLOCK_PIN(clockPin), OUT_PIN(outputPin)
 {
     pinsConfigured = false;
@@ -15,8 +18,6 @@ bool Q2HX711::readyToSend()
     if (!pinsConfigured)
     {
         // Configura los pines una vez, pero no en el constructor
-        CLOCK_PIN.output();
-        OUT_PIN.input();
         pinsConfigured = true;
     }
     return OUT_PIN == 0; // Considera LOW como condición de listo para enviar
