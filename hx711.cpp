@@ -3,13 +3,13 @@
 DigitalOut CLOCK_PIN(PA_5); // Reemplaza PA_5 con el pin que estás usando para CLOCK
 DigitalIn OUT_PIN(PA_6);
 
-void hx711::hx711(PinName outputPin, PinName clockPin) : CLOCK_PIN(clockPin), OUT_PIN(outputPin)
+hx711::hx711(PinName outputPin, PinName clockPin) : CLOCK_PIN(clockPin), OUT_PIN(outputPin)
 {
     pinsConfigured = false;
     GAIN = 1;
 }
 
-void Q2HX711::~Q2HX711()
+Q2HX711::~Q2HX711()
 {
 }
 
